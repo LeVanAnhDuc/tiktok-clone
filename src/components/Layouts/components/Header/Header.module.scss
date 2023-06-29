@@ -1,0 +1,19 @@
+.wrapper {
+    // justify-content: space-around;
+    height: var(--default-layout-header-size);
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 1px;
+    width: 100%;
+    top: 0px;
+    align-items: center;
+    position: fixed;
+    // background: rgb(255, 255, 255);
+    background-color: #aaa;
+}
+.inner {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: var(--default-layout-header-padding-right);
+    padding-left: var(--default-layout-header-padding-left);
+}
