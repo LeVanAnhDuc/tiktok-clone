@@ -49,15 +49,6 @@ function Sidebar() {
                             <li>ByteDance</li>
                         </ul>
                     </div>
-                    <div>
-                        <ul>
-                            <li>Giới thiệu</li>
-                            <li>Bảng tin</li>
-                            <li>Liên hệ</li>
-                            <li>Sự nghiệp</li>
-                            <li>ByteDance</li>
-                        </ul>
-                    </div>
                 </div>
             </h2>
         </>
