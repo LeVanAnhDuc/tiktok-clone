@@ -1,4 +1,12 @@
 .wrapper {
+    --search-border-radius: 92px;
+    --search-height: 46px;
+    --search-top-space: 9px;
+    --search-button-width: 52px;
+
+    --default-layout-header-padding-right: 24px;
+    --default-layout-header-padding-left: 16px;
+
     // justify-content: space-around;
     height: var(--default-layout-header-size);
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 1px;
@@ -6,14 +14,93 @@
     top: 0px;
     align-items: center;
     position: fixed;
-    // background: rgb(255, 255, 255);
-    background-color: #aaa;
+    background: rgb(255, 255, 255);
 }
 .inner {
+    height: 100%;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-right: var(--default-layout-header-padding-right);
     padding-left: var(--default-layout-header-padding-left);
+    display: flex;
+    align-items: center;
+}
+
+.search {
+    position: relative;
+    display: flex;
+    width: 516px;
+    height: var(--search-height);
+    background-color: rgba(22, 24, 35, 0.06);
+    border-radius: var(--search-border-radius);
+    padding-left: 16px;
+    border: 1px solid transparent;
+
+    // Dấu nháy màu đỏ khi nhập
+    caret-color: var(--primary);
+
+    input {
+        flex: 1;
+        height: 100%;
+        color: var(--black);
+        font-size: 1.6rem;
+        background-color: transparent;
+    }
+
+    // Khi nhập chữ vào input thì .search-btn sẽ đổi màu
+    input:not(:placeholder-shown) ~ .search-btn {
+        color: rgba(22, 24, 35, 0.75);
+    }
+
+    &::after {
+        content: '';
+        top: var(--search-top-space);
+        right: var(--search-button-width);
+        position: absolute;
+        height: calc(var(--search-height) - var(--search-top-space) * 2);
+        width: 1px;
+        background-color: rgba(22, 24, 35, 0.34);
+    }
+
+    //  Khi focus vào input thì sẽ xuất hiện border-color
+    &:focus-within {
+        border-color: rgba(22, 24, 35, 0.2);
+    }
+
+    &:hover {
+        border-color: rgba(22, 24, 35, 0.2);
+
+        .search-btn {
+            background-color: rgba(22, 24, 35, 0.06);
+            color: rgba(22, 24, 35, 0.75);
+        }
+    }
+}
+
+.clear,
+.loading {
+    color: 1.6rem;
+    position: absolute;
+    right: calc(var(--search-button-width) + 16px);
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(22, 24, 35, 0.34);
+}
+
+.search-btn {
+    height: 100%;
+    width: var(--search-button-width);
+    border-top-right-radius: var(--search-border-radius);
+    border-bottom-right-radius: var(--search-border-radius);
+    font-size: 1.8rem;
+    color: rgba(22, 24, 35, 0.34);
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.action {
 }

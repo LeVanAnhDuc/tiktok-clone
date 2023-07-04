@@ -2,10 +2,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 :root {
-    --primary: #fe2c55;
+    --primary: rgb(254, 44, 85);
+    --black: #000;
+    --text-color: rgb(22, 24, 35);
+
     --default-layout-header-size: 60px;
-    --default-layout-header-padding-right: 24px;
-    --default-layout-header-padding-left: 16px;
     --default-layout-sidebar-size: 240px;
 }
 
@@ -25,4 +26,20 @@ body {
     line-height: 1.5;
     // Tối ưu tải phông chữ
     text-rendering: optimizeSpeed;
+    color: var(--text-color);
+}
+
+//
+button,
+input,
+[tabindex] {
+    // bỏ khung viền và gạch chân duói chữ
+    border: none;
+    outline: none;
+}
+
+a[href] {
+    color: var(--text-color);
+    // bo gach chan
+    text-decoration: none;
 }
