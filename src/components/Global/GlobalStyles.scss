@@ -2,8 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 :root {
-    --primary: rgb(254, 44, 85);
+    --primary: rgb(254, 44, 85, 1);
     --black: #000;
+    --white: rgba(255, 255, 255, 1);
     --text-color: rgb(22, 24, 35);
 
     --default-layout-header-size: 60px;

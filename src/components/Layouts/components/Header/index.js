@@ -4,11 +4,12 @@ import images from '../../../../assets/images';
 import { Wrapper as PopperWrapper } from '../../../Popper';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleXmark, faSpinner, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { faCircleXmark, faSpinner, faMagnifyingGlass, faPlus } from '@fortawesome/free-solid-svg-icons';
 
 import Tippy from '@tippyjs/react/headless';
 import AccountItem from '../../AccountItem';
 import { useEffect, useState } from 'react';
+import Button from '../../../Button';
 
 const cx = classNames.bind(styles);
 
@@ -55,7 +56,14 @@ function Header() {
                     </Tippy>
 
                     {/* Setting */}
-                    <div className={cx('action')}>3</div>
+                    <div className={cx('action')}>
+                        <Button upload>
+                            <FontAwesomeIcon className={cx('padding-icon')} icon={faPlus} />
+                            <span>Tải lên</span>
+                        </Button>
+                        <Button primary>Đăng nhập</Button>
+                        <Button rounded>Tải ứng dụng</Button>
+                    </div>
                 </div>
             </header>
         </>

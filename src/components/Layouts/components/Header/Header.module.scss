@@ -25,8 +25,8 @@
     align-items: center;
     padding-right: var(--default-layout-header-padding-right);
     padding-left: var(--default-layout-header-padding-left);
-    display: flex;
-    align-items: center;
+
+    flex-wrap: wrap;
 }
 
 .search-result,
@@ -115,5 +115,8 @@
     }
 }
 
-// .action {
-// }
+.action {
+    .padding-icon {
+        padding-right: 8px;
+    }
+}
