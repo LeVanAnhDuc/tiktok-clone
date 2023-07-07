@@ -116,7 +116,21 @@
 }
 
 .action {
-    .padding-icon {
-        padding-right: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .more-btn {
+        height: 2rem;
+        width: 2.8rem;
+        cursor: pointer;
+        margin-left: 16px;
+        background-color: transparent;
+
+        padding: 0 4px;
     }
+}
+
+.more-menu {
+    padding: 8px 0px;
+    min-width: 223px;
 }

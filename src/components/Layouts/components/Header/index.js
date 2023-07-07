@@ -4,11 +4,19 @@ import images from '../../../../assets/images';
 import { Wrapper as PopperWrapper } from '../../../Popper';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleXmark, faSpinner, faMagnifyingGlass, faPlus } from '@fortawesome/free-solid-svg-icons';
+import {
+    faCircleXmark,
+    faSpinner,
+    faMagnifyingGlass,
+    faPlus,
+    faEllipsisVertical,
+} from '@fortawesome/free-solid-svg-icons';
 
 import Tippy from '@tippyjs/react/headless';
-import AccountItem from '../../AccountItem';
+
 import { useEffect, useState } from 'react';
+
+import AccountItem from '../../AccountItem';
 import Button from '../../../Button';
 
 const cx = classNames.bind(styles);
@@ -26,7 +34,7 @@ function Header() {
             <header className={cx('wrapper')}>
                 <div className={cx('inner')}>
                     {/* Logo */}
-                    <img src={images.logo} alt="Image-Tiktok" />
+                    <img src={images.logo} alt="logo-Tiktok" />
 
                     {/* Search */}
                     <Tippy
@@ -57,12 +65,30 @@ function Header() {
 
                     {/* Setting */}
                     <div className={cx('action')}>
-                        <Button upload>
-                            <FontAwesomeIcon className={cx('padding-icon')} icon={faPlus} />
-                            <span>Tải lên</span>
+                        <Button upload leftIcon={<FontAwesomeIcon icon={faPlus} />}>
+                            Tải lên
                         </Button>
                         <Button primary>Đăng nhập</Button>
-                        <Button rounded>Tải ứng dụng</Button>
+
+                        <Tippy
+                            interactive={true}
+                            placement="bottom-end"
+                            render={(attrs) => (
+                                <div className={cx('more-menu')} tabIndex="-1" {...attrs}>
+                                    <PopperWrapper>
+                                        <h4 className={cx('search-title')}>Account</h4>
+                                        <AccountItem />
+                                        <AccountItem />
+                                    </PopperWrapper>
+                                </div>
+                            )}
+                        >
+                            <button className={cx('more-btn')}>
+                                <FontAwesomeIcon icon={faEllipsisVertical} size="xl" />
+                            </button>
+                        </Tippy>
+
+                        {/* <Button rounded>Tải ứng dụng</Button> */}
                     </div>
                 </div>
             </header>

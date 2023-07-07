@@ -14,12 +14,17 @@ function Button({
 
     onclick,
 
+    // Type button
     primary = false,
     outline = false,
     upload = false,
     disable = false,
     rounded = false,
 
+    leftIcon = false,
+    rightIcon = false,
+
+    // Size button
     small = false,
     large = false,
 
@@ -58,6 +63,9 @@ function Button({
         disable,
         rounded,
 
+        leftIcon,
+        rightIcon,
+
         small,
         large,
     });
@@ -65,7 +73,9 @@ function Button({
     return (
         <>
             <Comp className={classs} {...props}>
-                <span>{children}</span>
+                {leftIcon && <span className={cx('icon')}>{leftIcon}</span>}
+                <span className={cx('children')}>{children}</span>
+                {rightIcon && <span className={cx('icon')}>{rightIcon}</span>}
             </Comp>
         </>
     );
