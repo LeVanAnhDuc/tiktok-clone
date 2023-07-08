@@ -15,6 +15,7 @@ function Button({
     onclick,
 
     // Type button
+    menuSetting = false,
     primary = false,
     outline = false,
     upload = false,
@@ -57,6 +58,8 @@ function Button({
 
     // Add class by ES6
     let classs = cx('wrapper', {
+        menuSetting,
+
         primary,
         outline,
         upload,

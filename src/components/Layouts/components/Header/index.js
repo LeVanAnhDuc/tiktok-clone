@@ -10,24 +10,47 @@ import {
     faMagnifyingGlass,
     faPlus,
     faEllipsisVertical,
+    faLanguage,
 } from '@fortawesome/free-solid-svg-icons';
 
 import Tippy from '@tippyjs/react/headless';
 
-import { useEffect, useState } from 'react';
+// import { useEffect, useState } from 'react';
 
 import AccountItem from '../../AccountItem';
 import Button from '../../../Button';
+import Menu from '../../../Popper/Menu';
+import { faCircleQuestion, faKeyboard, faMoon } from '@fortawesome/free-regular-svg-icons';
 
 const cx = classNames.bind(styles);
 
-function Header() {
-    const [search, setSearch] = useState([]);
+const MENU_ITEM = [
+    {
+        icon: <FontAwesomeIcon icon={faLanguage} />,
+        title: 'English',
+    },
+    {
+        icon: <FontAwesomeIcon icon={faCircleQuestion} size="lg" />,
+        title: 'Feedback and help',
+        to: '/feedback',
+    },
+    {
+        icon: <FontAwesomeIcon icon={faKeyboard} />,
+        title: 'Keyboard shortcuts',
+    },
+    {
+        icon: <FontAwesomeIcon icon={faMoon} size="lg" />,
+        title: 'Dark mode',
+    },
+];
 
-    useEffect(() => {
-        // Call Api
-        setSearch([]);
-    }, []);
+function Header() {
+    // const [search, setSearch] = useState([]);
+
+    // useEffect(() => {
+    //     // Call Api
+    //     setSearch([]);
+    // }, []);
 
     return (
         <>
@@ -39,7 +62,7 @@ function Header() {
                     {/* Search */}
                     <Tippy
                         interactive={true}
-                        visible={search.length <= 0}
+                        // visible={search.length <= 0}
                         render={(attrs) => (
                             <div className={cx('search-result')} tabIndex="-1" {...attrs}>
                                 <PopperWrapper>
@@ -70,23 +93,11 @@ function Header() {
                         </Button>
                         <Button primary>Đăng nhập</Button>
 
-                        <Tippy
-                            interactive={true}
-                            placement="bottom-end"
-                            render={(attrs) => (
-                                <div className={cx('more-menu')} tabIndex="-1" {...attrs}>
-                                    <PopperWrapper>
-                                        <h4 className={cx('search-title')}>Account</h4>
-                                        <AccountItem />
-                                        <AccountItem />
-                                    </PopperWrapper>
-                                </div>
-                            )}
-                        >
+                        <Menu menuItem={MENU_ITEM}>
                             <button className={cx('more-btn')}>
                                 <FontAwesomeIcon icon={faEllipsisVertical} size="xl" />
                             </button>
-                        </Tippy>
+                        </Menu>
 
                         {/* <Button rounded>Tải ứng dụng</Button> */}
                     </div>

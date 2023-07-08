@@ -15,9 +15,11 @@
 
     user-select: none;
 
-    + .wrapper {
-        margin-left: 16px;
-    }
+    // .wrapper {
+    //     margin-left: 16px;
+    // }
+
+    margin-left: 16px;
 
     // Độ ưu tiên đầu tiên
     &.disable {
@@ -29,6 +31,12 @@
 .icon + .children,
 .children + .icon {
     margin-left: 8px;
+}
+
+.icon {
+    display: inline-block;
+    width: 24px;
+    text-align: left;
 }
 
 // Button styles
@@ -82,6 +90,19 @@
     }
 }
 
+.menuSetting {
+    height: 4.4rem;
+    margin-left: 0;
+    width: 100%;
+    padding: 10px 8px 10px 16px;
+    text-align: left;
+    border-radius: 0;
+    font-weight: 600;
+
+    &:hover {
+        background: rgba(22, 24, 35, 0.03);
+    }
+}
 // Button size
 
 .small {
