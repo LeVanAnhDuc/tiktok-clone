@@ -28,6 +28,21 @@ const MENU_ITEM = [
     {
         icon: <FontAwesomeIcon icon={faLanguage} />,
         title: 'English',
+        children: {
+            title: 'Language',
+            data: [
+                {
+                    type: 'language',
+                    code: 'en',
+                    title: 'English',
+                },
+                {
+                    type: 'language',
+                    code: 'vi',
+                    title: 'Tiếng Việt',
+                },
+            ],
+        },
     },
     {
         icon: <FontAwesomeIcon icon={faCircleQuestion} size="lg" />,
@@ -51,6 +66,15 @@ function Header() {
     //     // Call Api
     //     setSearch([]);
     // }, []);
+
+    const handleChangeMenu = (menuItem) => {
+        switch (menuItem.type) {
+            case 'language':
+                // handle
+                break;
+            default:
+        }
+    };
 
     return (
         <>
@@ -93,7 +117,7 @@ function Header() {
                         </Button>
                         <Button primary>Đăng nhập</Button>
 
-                        <Menu menuItem={MENU_ITEM}>
+                        <Menu menuItem={MENU_ITEM} onChange={handleChangeMenu}>
                             <button className={cx('more-btn')}>
                                 <FontAwesomeIcon icon={faEllipsisVertical} size="xl" />
                             </button>

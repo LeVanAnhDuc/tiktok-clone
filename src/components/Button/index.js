@@ -12,7 +12,7 @@ function Button({
     to,
     href,
 
-    onclick,
+    onClick,
 
     // Type button
     menuSetting = false,
@@ -34,7 +34,7 @@ function Button({
     let Comp = 'button';
 
     const props = {
-        onclick,
+        onClick,
         ...passProps,
     };
 

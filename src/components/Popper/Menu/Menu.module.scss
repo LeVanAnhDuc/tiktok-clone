@@ -11,3 +11,27 @@
     flex-direction: column;
 }
 // Menu item
+
+//Menu translate
+.header {
+    margin-top: -8px;
+    display: flex;
+    align-items: center;
+    height: 50px;
+    position: relative;
+}
+
+.back-btn {
+    margin-left: 28px;
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.header-title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: 600;
+}
