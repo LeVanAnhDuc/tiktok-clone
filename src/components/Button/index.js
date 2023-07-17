@@ -16,6 +16,7 @@ function Button({
 
     // Type button
     menuSetting = false,
+
     primary = false,
     outline = false,
     upload = false,

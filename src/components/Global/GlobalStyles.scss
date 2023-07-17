@@ -28,6 +28,16 @@ body {
     // Tối ưu tải phông chữ
     text-rendering: optimizeSpeed;
     color: var(--text-color);
+
+    // custom tippy tooltip
+    .tippy-box {
+        background-color: rgba(84, 84, 84, 0.92);
+        border-radius: 8px;
+        padding: 2px;
+        font-weight: 400;
+        font-size: 1.6rem;
+        line-height: 2.1rem;
+    }
 }
 
 //
