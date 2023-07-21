@@ -9,6 +9,7 @@ import { useEffect, useRef, useState } from 'react';
 import classNames from 'classnames/bind';
 import styles from './Search.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useDebouunce } from '../../../../hooks';
 
 const cx = classNames.bind(styles);
 
@@ -20,9 +21,11 @@ function Search() {
 
     const inputRef = useRef();
 
+    const debounce = useDebouunce(searchValue, 500);
+
     useEffect(() => {
         // Nếu không có dữ liệu sẽ không call API
-        if (!searchValue.trim()) {
+        if (!debounce.trim()) {
             setSearch([]);
             return;
         }
@@ -32,14 +35,14 @@ function Search() {
 
         // Call Api
         // encodeURIComponent mã hóa kí tự đặc biệt
-        fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(searchValue)}&type=less`)
+        fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(debounce)}&type=less`)
             .then((res) => res.json())
             .then((res) => {
                 setSearch(res.data);
                 setLoading(false);
             })
             .catch(() => setLoading(false));
-    }, [searchValue]);
+    }, [debounce]);
 
     const handleClearResult = () => {
         setSearchValue('');
