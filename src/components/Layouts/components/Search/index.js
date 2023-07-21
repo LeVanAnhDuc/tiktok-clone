@@ -6,6 +6,8 @@ import { SearchIcon } from '../../../Icons';
 
 import { useEffect, useRef, useState } from 'react';
 
+import * as searchService from '../../../../api-services/searchService';
+
 import classNames from 'classnames/bind';
 import styles from './Search.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -35,13 +37,59 @@ function Search() {
 
         // Call Api
         // encodeURIComponent mã hóa kí tự đặc biệt
-        fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(debounce)}&type=less`)
-            .then((res) => res.json())
-            .then((res) => {
-                setSearch(res.data);
-                setLoading(false);
-            })
-            .catch(() => setLoading(false));
+        // fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(debounce)}&type=less`)
+        //     .then((res) => res.json())
+        //     .then((res) => {
+        //         setSearch(res.data);
+        //         setLoading(false);
+        //     })
+        //     .catch(() => setLoading(false));
+
+        // request.instance cấu hình axios trong file utils/requestt để gọi API ngắn hơn
+        // tương đương = axios.get('https://tiktok.fullstack.edu.vn/api/users/search')
+
+        // request.instance
+        //     .get(`users/search`, {
+        //         params: {
+        //             q: debounce,
+        //             type: 'less',
+        //         },
+        //     })
+        //     .then((res) => {
+        //         setSearch(res.data.data);
+        //         setLoading(false);
+        //     })
+        //     .catch(() => setLoading(false));
+
+        // ---
+
+        // const fetchAPI = async () => {
+        //     try {
+        //         const res = await request.instance.get(`users/search`, {
+        //             params: {
+        //                 q: debounce,
+        //                 type: 'less',
+        //             },
+        //         });
+        //         setSearch(res.data.data);
+        //         setLoading(false);
+        //     } catch (error) {
+        //         setLoading(false);
+        //     }
+        // };
+
+        // fetchAPI();
+
+        // -----
+
+        const fetchAPI = async () => {
+            const result = await searchService.search(debounce, 'less');
+            setSearch(result);
+            setLoading(false);
+        };
+
+        fetchAPI();
+        // ----
     }, [debounce]);
 
     const handleClearResult = () => {
