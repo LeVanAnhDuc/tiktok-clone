@@ -1,0 +1,98 @@
+.search-result,
+.search {
+    // width: var(--search-iframe-size);
+    width: 516px;
+}
+
+.search {
+    position: relative;
+    display: flex;
+    height: var(--search-height);
+    background-color: rgba(22, 24, 35, 0.06);
+    border-radius: var(--search-border-radius);
+    padding-left: 16px;
+    border: 1px solid transparent;
+
+    // Dấu nháy màu đỏ khi nhập
+    caret-color: var(--primary);
+
+    input {
+        flex: 1;
+        height: 100%;
+        color: var(--black);
+        font-size: 1.6rem;
+        background-color: transparent;
+    }
+
+    // Khi nhập chữ vào input thì .search-btn sẽ đổi màu
+    input:not(:placeholder-shown) ~ .search-btn {
+        color: rgba(22, 24, 35, 0.75);
+    }
+
+    &::after {
+        content: '';
+        top: var(--search-top-space);
+        right: var(--search-button-width);
+        position: absolute;
+        height: calc(var(--search-height) - var(--search-top-space) * 2);
+        width: 1px;
+        background-color: rgba(22, 24, 35, 0.34);
+    }
+
+    //  Khi focus vào input thì sẽ xuất hiện border-color
+    &:focus-within {
+        border-color: rgba(22, 24, 35, 0.2);
+    }
+
+    &:hover {
+        border-color: rgba(22, 24, 35, 0.2);
+
+        .search-btn {
+            background-color: rgba(22, 24, 35, 0.06);
+            color: rgba(22, 24, 35, 0.75);
+        }
+    }
+}
+
+.search-title {
+    color: rgba(22, 24, 35, 0.5);
+    padding: 5px 12px;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.clear,
+.loading {
+    color: 1.6rem;
+    position: absolute;
+    right: calc(var(--search-button-width) + 16px);
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(22, 24, 35, 0.34);
+}
+
+.loading {
+    animation: spinner 1s linear infinite;
+}
+
+@keyframes spinner {
+    from {
+        transform: translateY(-50%) rotate(0);
+    }
+    to {
+        transform: translateY(-50%) rotate(360deg);
+    }
+}
+
+.search-btn {
+    height: 100%;
+    width: var(--search-button-width);
+    border-top-right-radius: var(--search-border-radius);
+    border-bottom-right-radius: var(--search-border-radius);
+    font-size: 1.8rem;
+    color: rgba(22, 24, 35, 0.34);
+
+    &:hover {
+        cursor: pointer;
+    }
+}

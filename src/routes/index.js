@@ -10,7 +10,7 @@ import { HeaderOnly } from '../components/Layouts';
 const publishRoute = [
     { path: '/', component: Home },
     { path: '/following', component: Following },
-    { path: '/profile', component: Profile },
+    { path: '/:nickname', component: Profile },
     { path: '/upload', component: Upload, layout: HeaderOnly },
     { path: '/error', component: Error404, layout: null },
 ];

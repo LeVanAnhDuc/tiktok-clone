@@ -8,6 +8,7 @@ const cx = classNames.bind(styles);
 
 function Button({
     children,
+    className,
 
     to,
     href,
@@ -58,7 +59,7 @@ function Button({
     }
 
     // Add class by ES6
-    let classs = cx('wrapper', {
+    let classs = {
         menuSetting,
 
         primary,
@@ -72,11 +73,11 @@ function Button({
 
         small,
         large,
-    });
+    };
 
     return (
         <>
-            <Comp className={classs} {...props}>
+            <Comp className={cx('wrapper', classs, className)} {...props}>
                 {leftIcon && <span className={cx('icon')}>{leftIcon}</span>}
                 <span className={cx('children')}>{children}</span>
                 {rightIcon && <span className={cx('icon')}>{rightIcon}</span>}
