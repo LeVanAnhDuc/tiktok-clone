@@ -8,6 +8,7 @@ import { faPlus, faEllipsisVertical } from '@fortawesome/free-solid-svg-icons';
 // import HeadLessTippy from '@tippyjs/react/headless';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css'; // optional
+import { Link } from 'react-router-dom';
 
 import Button from '../../../Button';
 import Menu from '../../../Popper/Menu';
@@ -26,6 +27,7 @@ import {
 } from '../../../Icons';
 import Image from '../../../Image';
 import Search from '../Search';
+import RoutesConfig from '../../../../config/routes';
 
 const cx = classNames.bind(styles);
 
@@ -111,7 +113,9 @@ function Header() {
             <header className={cx('wrapper')}>
                 <div className={cx('inner')}>
                     {/* Logo */}
-                    <img src={images.logo} alt="logo-Tiktok" />
+                    <Link to={RoutesConfig.home} className={cx('logo')}>
+                        <img src={images.logo} alt="logo-Tiktok" />
+                    </Link>
 
                     {/* Search */}
                     <Search />

@@ -98,6 +98,15 @@ function Search() {
         inputRef.current.focus();
     };
 
+    const handleChangeKeyWord = (e) => {
+        const keyword = e.target.value;
+        const KEY_SPACE = /\s/g;
+
+        if (!KEY_SPACE.test(keyword[0])) {
+            setSearchValue(keyword);
+        }
+    };
+
     const handleShowHideTippy = () => {
         setShowResult(false);
     };
@@ -122,9 +131,9 @@ function Search() {
                 <div className={cx('search')}>
                     <input
                         ref={inputRef}
-                        placeholder="Tìm kiếm"
+                        placeholder="Search"
                         spellCheck={false}
-                        onChange={(event) => setSearchValue(event.target.value)}
+                        onChange={handleChangeKeyWord}
                         value={searchValue}
                         onFocus={() => {
                             setShowResult(true);

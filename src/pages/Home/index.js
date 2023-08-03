@@ -1,11 +1,11 @@
 function Home() {
     return (
         <>
-            {/* <div>
+            <div>
                 <h1>Home page</h1>
             </div>
             <h2>Home page</h2>
-            <h2>Home page</h2> */}
+            <h2>Home page</h2>
         </>
     );
 }

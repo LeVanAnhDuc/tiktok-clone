@@ -7,6 +7,8 @@
     --white: rgba(255, 255, 255, 1);
     --text-color: rgb(22, 24, 35);
 
+    --font-family: 'TikTokFont', sans-serif;
+
     --default-layout-header-size: 60px;
     --default-layout-sidebar-size: 240px;
 }
@@ -38,7 +40,7 @@ html {
 }
 
 body {
-    font-family: 'TikTokFont', sans-serif;
+    font-family: var(--font-family);
     font-size: 1.6rem;
     line-height: 1.5;
     // Tối ưu tải phông chữ
