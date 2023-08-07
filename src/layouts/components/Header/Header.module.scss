@@ -28,14 +28,15 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     padding-right: var(--default-layout-header-padding-right);
     padding-left: var(--default-layout-header-padding-left);
 
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
 }
 .logo {
     display: flex;
-    width: var(--logo-width);
+    min-width: var(--logo-width);
 }
 
 // Action

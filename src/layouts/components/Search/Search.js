@@ -23,11 +23,11 @@ function Search() {
 
     const inputRef = useRef();
 
-    const debounce = useDebouunce(searchValue, 500);
+    const debounceValue = useDebouunce(searchValue, 500);
 
     useEffect(() => {
         // Nếu không có dữ liệu sẽ không call API
-        if (!debounce.trim()) {
+        if (!debounceValue.trim()) {
             setSearch([]);
             return;
         }
@@ -37,7 +37,7 @@ function Search() {
 
         // Call Api
         // encodeURIComponent mã hóa kí tự đặc biệt
-        // fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(debounce)}&type=less`)
+        // fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(debounceValue)}&type=less`)
         //     .then((res) => res.json())
         //     .then((res) => {
         //         setSearch(res.data);
@@ -46,14 +46,14 @@ function Search() {
         //     .catch(() => setLoading(false));
 
         const fetchAPI = async () => {
-            const result = await searchService.search(debounce, 'less');
+            const result = await searchService.search(debounceValue, 'less');
             setSearch(result);
             setLoading(false);
         };
 
         fetchAPI();
         // ----
-    }, [debounce]);
+    }, [debounceValue]);
 
     const handleClearResult = () => {
         setSearchValue('');
@@ -77,7 +77,7 @@ function Search() {
     return (
         // Using a wrapper <div> tag around the reference element solves
         // this by creating a new parentNode context.
-        <div>
+        <div className={cx('wrapper')}>
             <HeadLessTippy
                 interactive={true}
                 visible={showResult && search.length > 0}
