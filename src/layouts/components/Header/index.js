@@ -1,6 +1,6 @@
 import styles from './Header.module.scss';
 import classNames from 'classnames/bind';
-import images from '../../../../assets/images';
+import images from '../../../assets/images';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faEllipsisVertical } from '@fortawesome/free-solid-svg-icons';
@@ -10,8 +10,8 @@ import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css'; // optional
 import { Link } from 'react-router-dom';
 
-import Button from '../../../Button';
-import Menu from '../../../Popper/Menu';
+import Button from '../../../components/Button';
+import Menu from '../../../components/Popper/Menu';
 import {
     DarkModeIcon,
     FavoritesIcon,
@@ -24,10 +24,10 @@ import {
     ProflieIcon,
     SettingIcon,
     TranSlateIcon,
-} from '../../../Icons';
-import Image from '../../../Image';
+} from '../../../components/Icons';
+import Image from '../../../components/Image';
 import Search from '../Search';
-import RoutesConfig from '../../../../config/routes';
+import config from '../../../config';
 
 const cx = classNames.bind(styles);
 
@@ -113,7 +113,7 @@ function Header() {
             <header className={cx('wrapper')}>
                 <div className={cx('inner')}>
                     {/* Logo */}
-                    <Link to={RoutesConfig.home} className={cx('logo')}>
+                    <Link to={config.Routes.home} className={cx('logo')}>
                         <img src={images.logo} alt="logo-Tiktok" />
                     </Link>
 
