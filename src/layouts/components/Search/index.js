@@ -1,7 +1,7 @@
 import { Wrapper as PopperWrapper } from '../../../components/Popper';
 import { faCircleXmark, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import HeadLessTippy from '@tippyjs/react/headless';
-import AccountItem from '../../AccountItem';
+import AccountItem from '../../../components/AccountItem';
 import { SearchIcon } from '../../../components/Icons';
 
 import { useEffect, useRef, useState } from 'react';

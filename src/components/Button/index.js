@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import styles from './Button.module.scss';
 import { Link } from 'react-router-dom';
@@ -16,8 +17,6 @@ function Button({
     onClick,
 
     // Type button
-    menuSetting = false,
-
     primary = false,
     outline = false,
     upload = false,
@@ -60,8 +59,6 @@ function Button({
 
     // Add class by ES6
     let classs = {
-        menuSetting,
-
         primary,
         outline,
         upload,
@@ -85,5 +82,28 @@ function Button({
         </>
     );
 }
+
+Button.propTypes = {
+    children: PropTypes.node.isRequired,
+
+    className: PropTypes.string,
+
+    to: PropTypes.string,
+    href: PropTypes.string,
+
+    onClick: PropTypes.func,
+
+    primary: PropTypes.bool,
+    outline: PropTypes.bool,
+    upload: PropTypes.bool,
+    disable: PropTypes.bool,
+    rounded: PropTypes.bool,
+
+    leftIcon: PropTypes.node,
+    rightIcon: PropTypes.node,
+
+    small: PropTypes.bool,
+    large: PropTypes.bool,
+};
 
 export default Button;

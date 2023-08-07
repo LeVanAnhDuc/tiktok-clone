@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 export const instance = axios.create({
+    // get URL from .env
     baseURL: process.env.REACT_APP_BASIC_URL,
 });
 
