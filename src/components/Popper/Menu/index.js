@@ -36,10 +36,13 @@ function Menu({ children, menuItem = [], hideOnClick = false, onChange = Default
         });
     };
 
+    const handleBack = () => {
+        setHistory((prev) => prev.slice(0, prev.length - 1));
+    };
+
     return (
         <>
             <Tippy
-                // visible={true}
                 offset={[10, 5]}
                 hideOnClick={hideOnClick}
                 interactive={true}
@@ -48,15 +51,8 @@ function Menu({ children, menuItem = [], hideOnClick = false, onChange = Default
                 render={(attrs) => (
                     <div className={cx('more-menu')} tabIndex="-1" {...attrs}>
                         <PopperWrapper className={cx('menu-list')}>
-                            {history.length > 1 && (
-                                <MenuTranslate
-                                    title={'Language'}
-                                    onBack={() => {
-                                        setHistory((prev) => prev.slice(0, prev.length - 1));
-                                    }}
-                                />
-                            )}
-                            {menuItem && menuItem.length > 0 && loopMenu()}
+                            {history.length > 1 && <MenuTranslate title={'Language'} onBack={handleBack} />}
+                            <div className={cx('menu-body')}>{menuItem && menuItem.length > 0 && loopMenu()}</div>
                         </PopperWrapper>
                     </div>
                 )}

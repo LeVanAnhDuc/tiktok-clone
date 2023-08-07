@@ -146,7 +146,7 @@ function Header() {
                         <Menu menuItem={currentUser ? menuUser : MENU_ITEM} onChange={handleChangeMenu}>
                             {currentUser ? (
                                 <Image
-                                    src="https://cdn.pixabay.com/photo/2023/06/05/08/41/bird-8041708_.jpg"
+                                    src="https://scontent.fsgn6-1.fna.fbcdn.net/v/t1.6435-9/52948657_827559447588263_6315469411260039168_n.jpg?_nc_cat=101&cb=99be929b-59f725be&ccb=1-7&_nc_sid=174925&_nc_ohc=vd1hhBHHnWEAX8tHXQn&_nc_ht=scontent.fsgn6-1.fna&oh=00_AfAm7ZVseGJBoX5h2CbjIX3r9C2g9eDHAzLSH7Piz5Yb0A&oe=64F7C039"
                                     className={cx('img-avata')}
                                     alt="avatar"
                                 />

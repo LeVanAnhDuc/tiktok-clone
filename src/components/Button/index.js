@@ -8,7 +8,7 @@ const cx = classNames.bind(styles);
 
 function Button({
     children,
-    className,
+    className = false,
 
     to,
     href,

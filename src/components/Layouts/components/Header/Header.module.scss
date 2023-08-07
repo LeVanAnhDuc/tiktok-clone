@@ -5,6 +5,8 @@
     --search-top-space: 9px;
     --search-button-width: 52px;
 
+    --logo-width: 300px;
+
     --default-layout-header-padding-right: 24px;
     --default-layout-header-padding-left: 16px;
 
@@ -12,10 +14,13 @@
     height: var(--default-layout-header-size);
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 1px;
     width: 100%;
-    top: 0px;
     align-items: center;
+    background: var(--white);
+
     position: fixed;
-    background: rgb(255, 255, 255);
+    top: 0px;
+
+    z-index: 10;
 }
 .inner {
     height: 100%;
@@ -30,6 +35,7 @@
 }
 .logo {
     display: flex;
+    width: var(--logo-width);
 }
 
 // Action

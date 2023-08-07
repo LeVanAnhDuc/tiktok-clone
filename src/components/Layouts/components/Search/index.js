@@ -112,7 +112,9 @@ function Search() {
     };
 
     return (
-        <>
+        // Using a wrapper <div> tag around the reference element solves
+        // this by creating a new parentNode context.
+        <div>
             <HeadLessTippy
                 interactive={true}
                 visible={showResult && search.length > 0}
@@ -154,7 +156,7 @@ function Search() {
                     </button>
                 </div>
             </HeadLessTippy>
-        </>
+        </div>
     );
 }
 

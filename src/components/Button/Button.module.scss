@@ -39,11 +39,19 @@
 }
 
 .icon {
-    display: inline-block;
+    height: 20px;
     width: 20px;
-    // margin-right: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+.children {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+}
 // Button styles
 .rounded {
     color: rgba(22, 24, 35, 0.75);
@@ -95,20 +103,6 @@
     }
 }
 
-.menuSetting {
-    height: 4.4rem;
-    margin-left: 0;
-    width: 100%;
-    padding: 10px 8px 10px 16px;
-    text-align: left;
-    border-radius: 0;
-    font-weight: 600;
-    line-height: 1.8rem;
-
-    &:hover {
-        background: rgba(22, 24, 35, 0.03);
-    }
-}
 // Button size
 
 .small {
