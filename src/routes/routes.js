@@ -4,6 +4,8 @@ import Home from '../pages/Home';
 import Following from '../pages/Following';
 import Profile from '../pages/Profile';
 import Upload from '../pages/Upload';
+import Live from '../pages/Live';
+import Explore from '../pages/Explore';
 import Error404 from '../pages/Error404';
 
 import { HeaderOnly } from '../layouts';
@@ -14,6 +16,8 @@ const publishRoute = [
     { path: config.Routes.home, component: Home },
     { path: config.Routes.following, component: Following },
     { path: config.Routes.profile, component: Profile },
+    { path: config.Routes.live, component: Live },
+    { path: config.Routes.explore, component: Explore },
     { path: config.Routes.upload, component: Upload, layout: HeaderOnly },
     { path: config.Routes.search, component: Search, layout: null },
     { path: config.Routes.error, component: Error404, layout: null },
