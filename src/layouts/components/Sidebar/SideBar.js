@@ -13,13 +13,36 @@ import {
     LiveIcon,
     LiveActiveIcon,
 } from '../../../components/Icons';
+import FollowingAccounts from './FollowingAccounts/FollowingAccounts';
 
 const cx = classNames.bind(styles);
 
+const LIST_POLICY = [
+    { About: 'About', Newsroom: 'Newsroom', Contact: 'Contact', Careers: 'Careers' },
+    {
+        TikTokforGood: 'TikTok for Good',
+        Advertise: 'Advertise',
+        Developers: 'Developers',
+        Transparency: 'Transparency',
+        TikTokRewards: 'TikTok Rewards',
+        TikTokEmbeds: 'TikTok Embeds',
+    },
+    {
+        Help: 'Help',
+        Safety: 'Safety',
+        Terms: 'Terms',
+        Privacy: 'Privacy',
+        CreatorPortal: 'Creator Portal',
+        CommunityGuidelines: 'Community Guidelines',
+    },
+];
+
 function Sidebar() {
+    const currentDate = new Date();
+    const currentYear = currentDate.getFullYear();
     return (
         <>
-            <h2 className={cx('wrapper')}>
+            <div className={cx('wrapper')}>
                 <nav className={cx('feature')}>
                     <Menu>
                         <MenuItem
@@ -48,39 +71,20 @@ function Sidebar() {
                         />
                     </Menu>
                 </nav>
-                <div className={cx('following')}>
-                    Các tài khoản đang follow
-                    <ul>
-                        <li>Le Van A</li>
-                        <li>Le Van A</li>
-                        <li>Le Van A</li>
-                        <li>Le Van A</li>
-                        <li>Le Van A</li>
-                        <li>Le Van A</li>
-                    </ul>
-                    <button>Xem them</button>
-                </div>
+                {/* Following account */}
+                <FollowingAccounts />
+
                 <div className={cx('policy')}>
-                    <div>
-                        <ul>
-                            <li>Giới thiệu</li>
-                            <li>Bảng tin</li>
-                            <li>Liên hệ</li>
-                            <li>Sự nghiệp</li>
-                            <li>ByteDance</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <ul>
-                            <li>Giới thiệu</li>
-                            <li>Bảng tin</li>
-                            <li>Liên hệ</li>
-                            <li>Sự nghiệp</li>
-                            <li>ByteDance</li>
-                        </ul>
-                    </div>
+                    {LIST_POLICY.map((item, index) => (
+                        <div className={cx('list-item')}>
+                            {Object.entries(item).map(([key, value], index) => (
+                                <a className={cx('link')}>{value}</a>
+                            ))}
+                        </div>
+                    ))}
+                    <span className={cx('copy-right')}>© {currentYear} TikTok</span>
                 </div>
-            </h2>
+            </div>
         </>
     );
 }

@@ -2,9 +2,11 @@
     width: 500px;
     min-width: 184px;
 }
-.search-result,
+.search-result {
+    width: 500px;
+    // min-width: 184px;
+}
 .search {
-    // width: var(--search-iframe-size);
     width: 100%;
 }
 
@@ -68,6 +70,8 @@
     padding: 5px 12px;
     font-size: 1.4rem;
     font-weight: 600;
+
+    min-width: 100%;
 }
 
 .clear,

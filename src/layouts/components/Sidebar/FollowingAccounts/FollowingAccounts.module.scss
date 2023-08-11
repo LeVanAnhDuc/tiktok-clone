@@ -1,0 +1,104 @@
+// FollowingAccounts
+.wrapper {
+    padding: 16px 0;
+    color: rgba(22, 24, 35, 0.75);
+    font-family: TikTokFont, Arial, Tahoma, PingFangSC, sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.093px;
+    position: relative;
+    &::before {
+        content: '';
+        position: absolute;
+        left: 8px;
+        right: 8px;
+        top: 0;
+        height: 1px;
+        background: rgba(22, 24, 35, 0.12);
+        -webkit-transform: scaleY(0.5);
+        -moz-transform: scaleY(0.5);
+        -ms-transform: scaleY(0.5);
+        transform: scaleY(0.5);
+    }
+}
+.title {
+    padding: 0 8px;
+    margin-bottom: 8px;
+    font-family: TikTokFont, Arial, Tahoma, PingFangSC, sans-serif;
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+.see-more {
+    color: rgb(254, 44, 85);
+    padding: 0px 8px;
+    margin-top: 8px;
+    cursor: pointer;
+}
+
+// Account
+.wrapper-account {
+    padding: 8px;
+    display: flex;
+
+    position: relative;
+    border-radius: 4px;
+    transition: background-color 200ms ease-in-out 0s;
+
+    cursor: pointer;
+
+    &:hover {
+        background-color: rgba(22, 24, 35, 0.03);
+    }
+    &:active {
+        background: rgba(22, 24, 35, 0.06);
+    }
+}
+.img {
+    width: 32px;
+    height: 32px;
+
+    border-radius: 50%;
+    border-color: rgba(22, 24, 35, 0.12);
+
+    margin-right: 12px;
+
+    object-fit: cover;
+}
+.info {
+    height: 32px;
+}
+.row-1 {
+    display: flex;
+    align-items: center;
+}
+.user {
+    color: rgb(22, 24, 35);
+    font-weight: 700;
+    font-size: 1.6rem;
+    line-height: 21px;
+    letter-spacing: 0.03px;
+    margin-top: -2px;
+    max-width: 14.5rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.icon {
+    margin-left: 4px;
+    width: 1.4rem;
+    height: 1.4rem;
+    color: rgb(32, 213, 236);
+}
+.name {
+    color: rgba(22, 24, 35, 0.75);
+    font-family: TikTokFont, Arial, Tahoma, PingFangSC, sans-serif;
+    font-weight: 400;
+    font-size: 1.2rem;
+    letter-spacing: 0.161px;
+    line-height: 1.5rem;
+    max-width: 14.5rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
