@@ -77,7 +77,7 @@ function Header() {
         }
     };
 
-    const currentUser = true;
+    const currentUser = false;
 
     const menuUser = [
         {
@@ -141,7 +141,9 @@ function Header() {
                             </>
                         ) : (
                             <>
-                                <Button primary>Login</Button>
+                                <Button className={cx('btn-login')} primary>
+                                    <div className={cx('login')}>Log in</div>
+                                </Button>
                             </>
                         )}
                         <Menu menuItem={currentUser ? menuUser : MENU_ITEM} onChange={handleChangeMenu}>

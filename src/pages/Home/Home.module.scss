@@ -1,0 +1,130 @@
+.wrapper {
+    display: flex;
+    justify-content: flex-start;
+
+    padding: 20px 0;
+    position: relative;
+
+    // transition-property: margin;
+    // transition-duration: 0.3s;
+
+    margin-bottom: 0px;
+
+    background-color: beige;
+
+    max-width: 692px;
+    height: unset;
+    width: unset;
+}
+// avatar
+.link-avatar {
+    // flex: 0 0 auto;
+    width: 56px;
+    height: 56px;
+}
+.image {
+    height: 100%;
+    width: 100%;
+
+    border-radius: 50%;
+    border-color: rgba(22, 24, 35, 0.12);
+    border-width: 0.5px;
+
+    object-fit: cover;
+    cursor: pointer;
+}
+
+//content
+
+.content {
+    margin-left: 12px;
+
+    width: 624px;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 624px;
+}
+
+.title {
+    margin-right: 114px;
+}
+.name {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .nick-name {
+        font-size: 18px;
+        line-height: 24px;
+        letter-spacing: -0.028px;
+        display: inline-block;
+        margin-right: 4px;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .full-name {
+        font-weight: 400;
+        font-size: 14px;
+        letter-spacing: 0.093px;
+        display: inline-block;
+        line-height: 28px;
+    }
+}
+
+.btn-following {
+    min-width: 96px;
+
+    right: 0;
+    position: absolute;
+    top: 28px;
+
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 2px;
+
+    padding: 1px;
+
+    display: flex;
+    justify-content: center;
+}
+
+.description {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding-bottom: unset;
+}
+.music {
+    margin-bottom: 12px;
+    .video-mussic {
+        line-height: 21px;
+        letter-spacing: 0.03px;
+        margin-top: 2px;
+        margin-left: 2px;
+        font-weight: 400;
+        font-size: 14px;
+
+        .link-music {
+            display: flex;
+            align-items: center;
+
+            &:hover {
+                text-decoration: underline;
+            }
+
+            .icon {
+                margin-right: 5px;
+                display: flex;
+
+                align-items: end;
+            }
+        }
+    }
+}
+// video
